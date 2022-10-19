@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoalStore.API", "CoalStore\CoalStore.API.csproj", "{EDA8EA6B-E6B4-4E79-A71A-6DFA5AD4C188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoalStore.DB", "CoalStore.DB\CoalStore.DB.csproj", "{C2CA4A00-5ECE-4ECC-B876-985BBE2374BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoalStore.Repositories", "CoalStore.Repositories\CoalStore.Repositories.csproj", "{107C315F-4F1A-499C-9BE6-ECFFE06C1FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoalStore.Services", "CoalStore.Services\CoalStore.Services.csproj", "{60B41A6B-3F81-4E0B-AD54-FD10C3A5A8D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoalStore.Shared", "CoalStore.Shared\CoalStore.Shared.csproj", "{D1C18F03-CAAD-473C-BEB7-A12CFA33808B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoalStore.Converters", "CoalStore.Converters\CoalStore.Converters.csproj", "{91A1B817-49C3-4801-A8DF-A6E4C1A0E52D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1A601E8-AE29-41E0-94D2-B54405A5155E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDA8EA6B-E6B4-4E79-A71A-6DFA5AD4C188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA8EA6B-E6B4-4E79-A71A-6DFA5AD4C188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA8EA6B-E6B4-4E79-A71A-6DFA5AD4C188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA8EA6B-E6B4-4E79-A71A-6DFA5AD4C188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CA4A00-5ECE-4ECC-B876-985BBE2374BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CA4A00-5ECE-4ECC-B876-985BBE2374BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CA4A00-5ECE-4ECC-B876-985BBE2374BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CA4A00-5ECE-4ECC-B876-985BBE2374BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107C315F-4F1A-499C-9BE6-ECFFE06C1FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107C315F-4F1A-499C-9BE6-ECFFE06C1FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107C315F-4F1A-499C-9BE6-ECFFE06C1FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107C315F-4F1A-499C-9BE6-ECFFE06C1FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B41A6B-3F81-4E0B-AD54-FD10C3A5A8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B41A6B-3F81-4E0B-AD54-FD10C3A5A8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B41A6B-3F81-4E0B-AD54-FD10C3A5A8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B41A6B-3F81-4E0B-AD54-FD10C3A5A8D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C18F03-CAAD-473C-BEB7-A12CFA33808B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C18F03-CAAD-473C-BEB7-A12CFA33808B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C18F03-CAAD-473C-BEB7-A12CFA33808B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C18F03-CAAD-473C-BEB7-A12CFA33808B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A1B817-49C3-4801-A8DF-A6E4C1A0E52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A1B817-49C3-4801-A8DF-A6E4C1A0E52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A1B817-49C3-4801-A8DF-A6E4C1A0E52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A1B817-49C3-4801-A8DF-A6E4C1A0E52D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91585422-D1D6-4804-A4E9-2A4ECB72FED0}
+	EndGlobalSection
+EndGlobal
