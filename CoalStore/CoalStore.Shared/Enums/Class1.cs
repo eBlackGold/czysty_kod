@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoalStore.Shared.Enums
 {
-    internal class Class1
+     class Class1
     {
     }
 }

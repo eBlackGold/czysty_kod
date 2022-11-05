@@ -1,12 +1,13 @@
 ﻿using CoalStore.DB;
 using CoalStore.DB.Models;
 using CoalStore.Repositories.IRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoalStore.Repositories.Repositories
 {
-    public class UserRepository : BaseRepository<User>, IUserRepository
+    public class OrderDetailRepository : BaseRepository<OrderDetail>, IOrderDetailRepository
     {
-        public UserRepository(ApplicationDBContext context)
+        public OrderDetailRepository(ApplicationDBContext context)
             : base(context)
         {
         }
