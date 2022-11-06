@@ -2,7 +2,7 @@
 
 namespace CoalStore.Repositories.IRepositories
 {
-    public interface IUserRepository : IBaseRepository<User>
+    public interface IOrderDetailRepository : IBaseRepository<OrderDetail>
     {
     }
 }

@@ -5,6 +5,14 @@
     {
         Task<TEntity> GetById(int id);
 
+        Task Add(TEntity entity);
+
+        Task AddAndComplete(TEntity entity);
+
+        Task UpdateAndComplete(TEntity entity);
+
+        Task AddRangeAndComplete(IEnumerable<TEntity> entities);
+
         Task DisposeContext();
     }
 }
