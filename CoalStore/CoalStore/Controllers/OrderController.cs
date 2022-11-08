@@ -26,7 +26,6 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns>list of order history</returns>
         [HttpGet("order-customer-history/{userLogin}")]
-        [Authorize]
         [ProducesResponseType(typeof(ICollection<OrderHistoryModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]
@@ -42,7 +41,6 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns>list of order history</returns>
         [HttpGet("order-supplier-history/{userLogin}")]
-        [Authorize]
         [ProducesResponseType(typeof(ICollection<OrderHistoryModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]
@@ -58,7 +56,6 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns></returns>
         [HttpPost("submit-order")]
-        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]

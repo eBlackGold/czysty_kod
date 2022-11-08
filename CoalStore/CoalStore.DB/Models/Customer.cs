@@ -14,7 +14,7 @@
 
         public string Address { get; set; }
 
-        public DateTime SessionStart { get; set; }
+        public DateTime? SessionStart { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }

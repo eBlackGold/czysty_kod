@@ -1,52 +1,52 @@
 ﻿USE [eBlackGold]
 GO
-/****** Object:  User [user]    Script Date: 06.11.2022 09:23:50 ******/
+/****** Object:  User [user]    Script Date: 08.11.2022 20:52:14 ******/
 CREATE USER [user] FOR LOGIN [user] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_owner] ADD MEMBER [user]
 GO
-/****** Object:  Table [dbo].[Customer]    Script Date: 06.11.2022 09:23:50 ******/
+/****** Object:  Table [dbo].[Customer]    Script Date: 08.11.2022 20:52:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Customer](
-	[Id] [int] NOT NULL,
-	[Login] [varchar](50) NULL,
-	[Password] [varchar](50) NULL,
-	[Name] [varchar](50) NULL,
-	[Surname] [varchar](50) NULL,
-	[Address] [varchar](50) NULL,
-	[SessionStart] [date] NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Login] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[Name] [nvarchar](50) NULL,
+	[Surname] [nvarchar](50) NULL,
+	[Address] [nvarchar](50) NULL,
+	[SessionStart] [datetime] NULL,
  CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order]    Script Date: 06.11.2022 09:23:50 ******/
+/****** Object:  Table [dbo].[Order]    Script Date: 08.11.2022 20:52:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Order](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[CustomerId] [int] NULL,
-	[OrderDate] [date] NULL,
-	[Status] [varchar](50) NULL,
+	[OrderDate] [datetime] NULL,
+	[Status] [nvarchar](50) NULL,
  CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrderDetail]    Script Date: 06.11.2022 09:23:50 ******/
+/****** Object:  Table [dbo].[OrderDetail]    Script Date: 08.11.2022 20:52:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[OrderDetail](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[OrderId] [int] NULL,
 	[ProductId] [int] NULL,
 	[Quantity] [int] NULL,
@@ -56,36 +56,36 @@ CREATE TABLE [dbo].[OrderDetail](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 06.11.2022 09:23:50 ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 08.11.2022 20:52:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Product](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[SupplierId] [int] NULL,
-	[Name] [varchar](50) NULL,
+	[Name] [nvarchar](50) NULL,
 	[Price] [float] NULL,
 	[UnitsInStock] [int] NULL,
-	[CoalType] [varchar](50) NULL,
+	[CoalType] [nvarchar](50) NULL,
  CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Supplier]    Script Date: 06.11.2022 09:23:50 ******/
+/****** Object:  Table [dbo].[Supplier]    Script Date: 08.11.2022 20:52:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Supplier](
-	[Id] [int] NOT NULL,
-	[Login] [varchar](50) NULL,
-	[Password] [varchar](50) NULL,
-	[CompanyName] [varchar](50) NULL,
-	[Address] [varchar](50) NULL,
-	[SessionsStart] [date] NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Login] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[CompanyName] [nvarchar](50) NULL,
+	[Address] [nvarchar](50) NULL,
+	[SessionStart] [datetime] NULL,
  CONSTRAINT [PK_Supplier] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
