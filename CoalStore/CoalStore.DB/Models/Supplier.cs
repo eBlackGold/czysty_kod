@@ -12,7 +12,7 @@
 
         public string Address { get; set; }
 
-        public DateTime SessionStart { get; set; }
+        public DateTime? SessionStart { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

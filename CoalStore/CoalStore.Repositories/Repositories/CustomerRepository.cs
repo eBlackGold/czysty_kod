@@ -14,9 +14,10 @@ namespace CoalStore.Repositories.Repositories
 
         public async Task<Customer> GetCustomerByLogin(string login)
         {
-            return await _context.Customers
+            var result = await _context.Customers
                 .Where(u => u.Login == login)
                 .FirstOrDefaultAsync();
+            return result;
         }
     }
 }
