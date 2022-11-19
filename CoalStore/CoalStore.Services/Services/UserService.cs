@@ -23,7 +23,6 @@ namespace CoalStore.Services.Services
                 {
                     Login = model.Login,
                     Password = model.Password,
-                    SessionStart = null,
                 };
 
                 await _unitOfWork.Customer.AddAndComplete(customer);

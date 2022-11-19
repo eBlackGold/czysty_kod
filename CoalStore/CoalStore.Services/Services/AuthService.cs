@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using System.Threading.Tasks;
+using CoalStore.DB.Models;
 using CoalStore.Repositories.UnitOfWork;
 using CoalStore.Services.IServices;
 using CoalStore.Shared.Consts;
@@ -33,56 +33,63 @@ namespace CoalStore.Services.Services
 
         public async Task CreateSession(AuthorizationModel model)
         {
-            if (model.Role == UserRole.Customer)
+            await ClearSession(model.Login, model.Role);
+            UserSession userSession;
+            IUser user = await GetUserByLoginAndRole(model.Login, model.Role);
+            userSession = new UserSession
             {
-                var user = await _unitOfWork.Customer.GetCustomerByLogin(model.Login);
-                user.SessionStart = DateTime.Now;
-            }
-            else
-            {
-                var user = await _unitOfWork.Supplier.GetSupplierByLogin(model.Login);
-                user.SessionStart = DateTime.Now;
-            }
-
-            await _unitOfWork.Complete();
+                UserId = user.Id,
+                UserRole = model.Role,
+                SessionStart = DateTime.Now,
+            };
+            await _unitOfWork.UserSession.AddAndComplete(userSession);
         }
 
-        public async Task ClearSession(AuthorizationModel model)
+        public async Task<int> GetSessionId(AuthorizationModel model)
         {
-            if (model.Role == UserRole.Customer)
-            {
-                var user = await _unitOfWork.Customer.GetCustomerByLogin(model.Login);
-                user.SessionStart = null;
-            }
-            else
-            {
-                var user = await _unitOfWork.Supplier.GetSupplierByLogin(model.Login);
-                user.SessionStart = null;
-            }
-
-            await _unitOfWork.Complete();
+            IUser user = await GetUserByLoginAndRole(model.Login, model.Role);
+            var sessionId = await _unitOfWork.UserSession.GetSessionIdByUserIdAndRole(user.Id, model.Role);
+            return sessionId;
         }
 
-        public async Task<List<Claim>> GetUserClaims(AuthorizationModel model)
+        public async Task ClearSession(string login, string role)
         {
-            int userId;
-            if (model.Role == UserRole.Customer)
-            {
-                var user = await _unitOfWork.Customer.GetCustomerByLogin(model.Login);
-                userId = user.Id;
-            }
-            else
-            {
-                var user = await _unitOfWork.Supplier.GetSupplierByLogin(model.Login);
-                userId = user.Id;
-            }
+            IUser user = await GetUserByLoginAndRole(login, role);
 
+            var userSession = await _unitOfWork.UserSession.GetByUserIdAndRole(user.Id, role);
+            if ( userSession != null)
+            {
+                await _unitOfWork.UserSession.Remove(userSession);
+
+                await _unitOfWork.Complete();
+            }
+        }
+
+        public async Task<List<Claim>> GetUserClaims(AuthorizationModel model, int sessionId)
+        {
+            IUser user = await GetUserByLoginAndRole(model.Login, model.Role);
             var claimsList = new List<Claim>();
             claimsList.Add(new Claim(Codes.ClaimTypes.Login, model.Login));
-            claimsList.Add(new Claim(Codes.ClaimTypes.UserId, userId.ToString()));
+            claimsList.Add(new Claim(Codes.ClaimTypes.UserId, user.Id.ToString()));
             claimsList.Add(new Claim(Codes.ClaimTypes.Role, model.Role));
+            claimsList.Add(new Claim(Codes.ClaimTypes.SessionId, sessionId.ToString()));
 
             return claimsList;
+        }
+
+        private async Task<IUser> GetUserByLoginAndRole(string login, string role)
+        {
+            IUser user;
+            if (role == UserRole.Customer)
+            {
+                user = await _unitOfWork.Customer.GetCustomerByLogin(login);
+            }
+            else
+            {
+                user = await _unitOfWork.Supplier.GetSupplierByLogin(login);
+            }
+
+            return user;
         }
     }
 }

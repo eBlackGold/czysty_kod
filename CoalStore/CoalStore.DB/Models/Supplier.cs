@@ -1,6 +1,6 @@
 ﻿namespace CoalStore.DB.Models
 {
-    public partial class Supplier
+    public partial class Supplier : IUser
     {
         public int Id { get; set; }
 
@@ -11,8 +11,6 @@
         public string CompanyName { get; set; }
 
         public string Address { get; set; }
-
-        public DateTime? SessionStart { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

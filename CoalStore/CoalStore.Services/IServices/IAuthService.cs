@@ -9,8 +9,10 @@ namespace CoalStore.Services.IServices
 
         Task CreateSession(AuthorizationModel model);
 
-        Task ClearSession(AuthorizationModel model);
+        Task ClearSession(string login, string role);
 
-        Task<List<Claim>> GetUserClaims(AuthorizationModel model);
+        Task<List<Claim>> GetUserClaims(AuthorizationModel model, int sessionId);
+
+        Task<int> GetSessionId(AuthorizationModel model);
     }
 }
