@@ -3,6 +3,7 @@ using CoalStore.API.Configuration.Swagger;
 using CoalStore.API.Configuration;
 using CoalStore.DB;
 using CoalStore.Services.IServices;
+using CoalStore.API.Configuration.Security;
 
 namespace CoalStore.API
 {
@@ -22,6 +23,7 @@ namespace CoalStore.API
             services.AddAuthentication(IISDefaults.AuthenticationScheme);
             services.AddHttpContextAccessor();
             DbConfig.Configure(services, Configuration);
+            JwtConfig.Configure(services, Configuration);
             AppServicesConfig.Configure(services, Configuration);
             SwaggerConfig.Configure(services);
         }

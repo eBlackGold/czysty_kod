@@ -40,6 +40,11 @@ namespace CoalStore.Repositories.Repositories
             await _context.DisposeAsync();
         }
 
+        public async Task Remove(TEntity entity)
+        {
+            await Task.Run(() => _context.Set<TEntity>().Remove(entity));
+        }
+
         public async Task AddRangeAndComplete(IEnumerable<TEntity> entities)
         {
             await _context.Set<TEntity>().AddRangeAsync(entities);

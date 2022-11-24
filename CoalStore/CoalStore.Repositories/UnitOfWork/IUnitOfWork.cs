@@ -14,6 +14,8 @@ namespace CoalStore.Repositories.UnitOfWork
 
         ISupplierRepository Supplier { get; }
 
+        IUserSessionRepository UserSession { get; }
+
         Task Complete();
     }
 }

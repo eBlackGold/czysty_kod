@@ -13,6 +13,8 @@
 
         Task AddRangeAndComplete(IEnumerable<TEntity> entities);
 
+        Task Remove(TEntity entity);
+
         Task DisposeContext();
     }
 }

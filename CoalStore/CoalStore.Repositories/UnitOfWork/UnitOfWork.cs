@@ -17,6 +17,7 @@ namespace CoalStore.Repositories.UnitOfWork
             OrderDetail = new OrderDetailRepository(context);
             Product = new ProductRepository(context);
             Supplier = new SupplierRepository(context);
+            UserSession = new UserSessionRepository(context);
         }
 
         public ICustomerRepository Customer { get; }
@@ -28,6 +29,8 @@ namespace CoalStore.Repositories.UnitOfWork
         public IProductRepository Product { get; }
 
         public ISupplierRepository Supplier { get; }
+
+        public IUserSessionRepository UserSession { get; }
 
         public async Task Complete()
         {

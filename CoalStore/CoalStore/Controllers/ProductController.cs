@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using CoalStore.Services.IServices;
 using CoalStore.Shared.Models.Product;
+using CoalStore.API.Filters;
+using CoalStore.Shared.Enums;
 
 namespace CoalStore.API.Controllers
 {
@@ -23,7 +25,7 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns>list of products for supplier</returns>
         [HttpGet("get-suppliers-products/{userLogin}")]
-        [AllowAnonymous]
+        [CoalStoreAuthorize(AuthorizationPermissionLevel.Supplier)]
         [ProducesResponseType(typeof(ICollection<ProductSupplyModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]
@@ -39,7 +41,7 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns>list of all products</returns>
         [HttpGet("get-all-products")]
-        [AllowAnonymous]
+        [CoalStoreAuthorize(AuthorizationPermissionLevel.AnyUser)]
         [ProducesResponseType(typeof(ICollection<ProductSupplyModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]
@@ -55,7 +57,7 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns></returns>
         [HttpPost("add-product")]
-        [AllowAnonymous]
+        [CoalStoreAuthorize(AuthorizationPermissionLevel.Supplier)]
         [ProducesResponseType(typeof(ICollection<ProductSupplyModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]

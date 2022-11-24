@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using CoalStore.Shared.Models.User;
 using CoalStore.Shared.Consts;
+using CoalStore.API.Filters;
+using CoalStore.Shared.Enums;
 
 namespace CoalStore.API.Controllers
 {
@@ -57,7 +59,7 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns></returns>
         [HttpPost("edit-supplier")]
-        [AllowAnonymous]
+        [CoalStoreAuthorize(AuthorizationPermissionLevel.Supplier)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]
@@ -73,7 +75,7 @@ namespace CoalStore.API.Controllers
         /// <remarks>Policy = Allow Anonymous</remarks>
         /// <returns></returns>
         [HttpPost("edit-customer")]
-        [AllowAnonymous]
+        [CoalStoreAuthorize(AuthorizationPermissionLevel.Customer)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorDetailsModel), StatusCodes.Status401Unauthorized)]

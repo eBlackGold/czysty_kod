@@ -24,6 +24,8 @@ namespace CoalStore.DB
 
         public virtual DbSet<Supplier> Suppliers { get; set; }
 
+        public virtual DbSet<UserSession> UserSessions { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -38,8 +40,6 @@ namespace CoalStore.DB
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.ToTable("Customer");
-
-                entity.Property(e => e.SessionStart).HasColumnType("datetime");
 
                 entity.Property(e => e.Address).HasMaxLength(50);
 
@@ -93,7 +93,20 @@ namespace CoalStore.DB
             {
                 entity.ToTable("Supplier");
 
-                entity.Property(e => e.SessionStart).HasColumnType("datetime").IsRequired(false);
+                entity.Property(e => e.Address).HasMaxLength(50);
+
+                entity.Property(e => e.Password).HasMaxLength(50);
+
+                entity.Property(e => e.Login).HasMaxLength(50);
+
+                entity.Property(e => e.CompanyName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<UserSession>(entity =>
+            {
+                entity.ToTable("UserSession");
+
+                entity.Property(e => e.UserRole).HasMaxLength(50);
             });
         }
     }
