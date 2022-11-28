@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_grey">
+
+        <TextView
+            android:id="@+id/title"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            style="@style/title"/>
+
+        <ImageView
+            android:id="@+id/coal"
+            android:foregroundGravity="center_horizontal"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            style="@style/coal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/coal"
+            android:background="@color/white"
+            android:layout_marginTop="120dp"
+            android:contentDescription="@string/white_background_block" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logowanie"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/adres_email"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/email_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:hint="@string/wpisz_adres_email"
+            android:autofillHints="" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/haslo"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:hint="@string/wpisz_haslo"
+            android:autofillHints=""/>
+
+        <TextView
+            android:id="@+id/restore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/zapomniales_hasla"
+            android:gravity="end"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/login"
+            android:text="@string/zaloguj"
+            app:backgroundTint="@color/grey"
+            style="@style/button_grey"
+            />
+
+        <TextView
+            android:id="@+id/register_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/nie_masz_konta"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

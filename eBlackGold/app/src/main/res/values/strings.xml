@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">eBlackGold</string>
+    <string name="eblackgold">eBlack<font color='#FFA829'>Gold</font></string>
+    <string name="logowanie">Logowanie</string>
+    <string name="adres_email">Adres e-mail</string>
+    <string name="haslo">Hasło</string>
+    <string name="zapomniales_hasla">Zapomniałeś/aś hasła?</string>
+    <string name="wpisz_haslo">wpisz hasło</string>
+    <string name="wpisz_adres_email">wpisz adres e-mail</string>
+    <string name="zaloguj">Zaloguj</string>
+    <string name="nie_masz_konta">Nie masz konta? <font color='#FFA829'><b>Zarejestruj się!</b></font></string>
+    <string name="white_background_block">White background block</string>
+    <string name="a_picture_of_a_piece_of_coal">A picture of a piece of coal</string>
+    <string name="rejestracja">Rejestracja</string>
+    <string name="powtorz_haslo">Powtórz hasło</string>
+    <string name="powtorz_haslo2">powtórz hasło</string>
+    <string name="zarejestruj">Zarejestruj</string>
+    <string name="masz_konto">Masz już konto? <font color='#FFA829'><b>Zaloguj się!</b></font></string>
+</resources>
