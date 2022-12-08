@@ -31,10 +31,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="title.profile">
+        <item name="android:text">@string/profil</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
     <style name="coal">
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:src">@drawable/coal_placeholder</item>
         <item name="android:contentDescription">@string/a_picture_of_a_piece_of_coal</item>
     </style>
+
+    <string name="profil">Profil użytkownika</string>
 </resources>

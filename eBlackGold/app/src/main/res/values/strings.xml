@@ -16,4 +16,9 @@
     <string name="powtorz_haslo2">powtórz hasło</string>
     <string name="zarejestruj">Zarejestruj</string>
     <string name="masz_konto">Masz już konto? <font color='#FFA829'><b>Zaloguj się!</b></font></string>
+    <string name="profil">Profil <font color='#FFA829'>użytkownika</font></string>
+    <string name="imie">Imię</string>
+    <string name="nazwisko">Nazwisko</string>
+    <string name="adres">Adres</string>
+    <string name="historia_transakcji">Historia Transakcji</string>
 </resources>
