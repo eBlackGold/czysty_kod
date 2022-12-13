@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfile"
+    tools:context=".SellerProfile"
     android:background="@color/black">
-
 
     <ImageView
         android:layout_width="50dp"
@@ -15,10 +14,10 @@
         app:tint="@android:color/white" />
 
     <TextView
-        android:id="@+id/user_profile"
+        android:id="@+id/seller_profile"
         android:gravity="center"
         android:layout_marginTop="30dp"
-        android:text="@string/profil"
+        android:text="@string/profil_sprzedawcy"
         style="@style/title.profile"/>
 
     <ImageView
@@ -29,43 +28,74 @@
         android:contentDescription="@string/white_background_block" />
 
     <ImageView
-        android:id="@+id/user_avatar"
+        android:id="@+id/seller_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         tools:srcCompat="@tools:sample/avatars"
-        android:layout_below="@id/user_profile"
+        android:layout_below="@id/seller_profile"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"/>
 
     <LinearLayout
-        android:id="@+id/user_data"
+        android:id="@+id/seller_data"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/user_avatar"
+        android:layout_below="@id/seller_avatar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@android:drawable/ic_menu_edit"
-            android:hint="@string/imie" />
+            android:hint="@string/nazwa_firmy" />
 
         <EditText
-            android:id="@+id/surname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@android:drawable/ic_menu_edit"
-            android:hint="@string/nazwisko" />
-
-        <EditText
-            android:id="@+id/address"
+            android:id="@+id/company_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@android:drawable/ic_menu_edit"
             android:hint="@string/adres" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aktywne_oferty"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/active_offer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/seller_data">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_below="@id/active_offer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Dodaj ofertę"
+            android:background="@drawable/rounded_corners"
+            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,21 +105,20 @@
             android:textSize="20sp"
             android:layout_margin="10dp"/>
 
+        <ScrollView
+            android:id="@+id/offer_history"
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/history"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/user_data">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
-    </ScrollView>
 
 </RelativeLayout>
