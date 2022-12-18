@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoalStore.DB.Models;
+using CoalStore.Shared.Models.Product;
 
 namespace CoalStore.Services.Factories
 {
-    static class ProductFactory
+    public static class ProductFactory
     {
-        public static async Task<Product> AddProduct(AddSupplyModel model, Supplier supplier)
+        public static Product CreateProduct(AddSupplyModel model, Supplier supplier)
         {
             var product = new Product
             {
