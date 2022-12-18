@@ -18,11 +18,6 @@ namespace CoalStore.Repositories.Repositories
             return await _context.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task Add(TEntity entity)
-        {
-            await _context.Set<TEntity>().AddAsync(entity);
-        }
-
         public async Task AddAndComplete(TEntity entity)
         {
             await _context.Set<TEntity>().AddAsync(entity);

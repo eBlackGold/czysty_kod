@@ -126,3 +126,11 @@ REFERENCES [dbo].[Supplier] ([Id])
 GO
 ALTER TABLE [dbo].[Product] CHECK CONSTRAINT [FK_Product_Supplier]
 GO
+INSERT INTO [dbo].[Supplier] VALUES (
+    'user', 
+    'password'
+)
+INSERT INTO [dbo].[Customer] VALUES (
+    'user', 
+    'password'
+)

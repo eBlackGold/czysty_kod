@@ -8,6 +8,7 @@ using CoalStore.DB.Models;
 using CoalStore.Repositories.UnitOfWork;
 using CoalStore.Services.IServices;
 using CoalStore.Shared.Models.Product;
+using CoalStore.Services.Factories;
 
 namespace CoalStore.Services.Services
 {
@@ -35,14 +36,8 @@ namespace CoalStore.Services.Services
         public async Task AddProduct(AddSupplyModel model)
         {
             var supplier = await _unitOfWork.Supplier.GetSupplierByLogin(model.Login);
-            var product = new Product
-            {
-                Supplier = supplier,
-                Name = model.Name,
-                Price = model.Price,
-                UnitsInStock = model.UnitsInStock,
-                CoalType = model.CoalType,
-            };
+            var product = ProductFactory.AddProduct(model, supplier);
+            
             await _unitOfWork.Product.AddAndComplete(product);
         }
     }

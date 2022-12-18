@@ -7,6 +7,7 @@ using CoalStore.Services.IServices;
 using CoalStore.Shared.Consts;
 using CoalStore.Shared.Models.Order;
 using Microsoft.Extensions.Configuration;
+using CoalStore.Services.Validators;
 
 namespace CoalStore.Services.Services
 {
@@ -77,16 +78,8 @@ namespace CoalStore.Services.Services
             foreach (var product in productsToBuy)
             {
                 var productOrder = productOrders.Where(o => o.ProductId == product.Id).FirstOrDefault();
-                ValidateProductSupply(product, productOrder);
+                OrderValidator.ValidateProductSupply(product, productOrder);
                 product.UnitsInStock -= productOrder.Quantity;
-            }
-        }
-
-        private void ValidateProductSupply(Product product, ProductOrderModel productOrder)
-        {
-            if (productOrder.Quantity > product.UnitsInStock)
-            {
-                throw new Exception("Nie ma tyle węgla");
             }
         }
     }

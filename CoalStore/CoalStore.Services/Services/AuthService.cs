@@ -18,17 +18,8 @@ namespace CoalStore.Services.Services
 
         public async Task<bool> IsPasswordValid(AuthorizationModel model)
         {
-            string userPassword;
-            if (model.Role == UserRole.Customer)
-            {
-                userPassword = (await _unitOfWork.Customer.GetCustomerByLogin(model.Login))?.Password;
-            }
-            else
-            {
-                userPassword = (await _unitOfWork.Supplier.GetSupplierByLogin(model.Login))?.Password;
-            }
-
-            return model.Password == userPassword;
+            var user = await GetUserByLoginAndRole(model.Login, model.Role);
+            return model.Password == user.Password;
         }
 
         public async Task CreateSession(AuthorizationModel model)
