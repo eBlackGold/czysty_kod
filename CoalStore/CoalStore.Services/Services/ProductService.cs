@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CoalStore.Converters.Converters;
-using CoalStore.DB.Models;
+﻿using CoalStore.Converters.Converters;
 using CoalStore.Repositories.UnitOfWork;
 using CoalStore.Services.IServices;
 using CoalStore.Shared.Models.Product;
@@ -36,8 +30,7 @@ namespace CoalStore.Services.Services
         public async Task AddProduct(AddSupplyModel model)
         {
             var supplier = await _unitOfWork.Supplier.GetSupplierByLogin(model.Login);
-            var product = ProductFactory.AddProduct(model, supplier);
-            
+            var product = ProductFactory.CreateProduct(model, supplier);
             await _unitOfWork.Product.AddAndComplete(product);
         }
     }
