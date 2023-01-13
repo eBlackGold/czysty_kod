@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddOffer">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imgOffer"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_box" />
+
+            <EditText
+                android:id="@+id/nameOffer"
+                android:layout_width="353dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/nazwa_produktu"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.534"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgOffer" />
+
+            <TextView
+                android:id="@+id/unitsOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/ilosc"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/nameOffer"
+                app:layout_constraintTop_toBottomOf="@+id/nameOffer" />
+
+            <TextView
+                android:id="@+id/priceOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/cena_sztuka"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/unitsOffer"
+                app:layout_constraintTop_toBottomOf="@+id/unitsOffer" />
+
+            <EditText
+                android:id="@+id/editTextNumberDecimal"
+                android:layout_width="60dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:ems="10"
+                android:hint="10"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toEndOf="@+id/unitsOffer"
+                app:layout_constraintTop_toBottomOf="@+id/nameOffer" />
+
+            <EditText
+                android:id="@+id/editTextNumberSigned"
+                android:layout_width="60dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="99,44"
+                android:inputType="numberSigned"
+                app:layout_constraintStart_toEndOf="@+id/priceOffer"
+                app:layout_constraintTop_toBottomOf="@+id/unitsOffer" />
+
+            <ImageView
+                android:id="@+id/editImgOffer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/nameOffer"
+                app:layout_constraintEnd_toEndOf="@+id/nameOffer"
+                app:layout_constraintTop_toTopOf="@+id/nameOffer"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:id="@+id/typeOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/wegiel_typ"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/priceOffer"
+                app:layout_constraintTop_toBottomOf="@+id/priceOffer" />
+
+            <Spinner
+                android:id="@+id/dropdownTypeOffer"
+                android:layout_width="100dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/title_activity_cart"
+                app:layout_constraintStart_toEndOf="@+id/typeOffer"
+                app:layout_constraintTop_toBottomOf="@+id/priceOffer" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dropdownTypeOffer" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/option3DeliveryOffer" />
+
+            <TextView
+                android:id="@+id/title1Offer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/mozliwe_dostawy"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/typeOffer"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/title2Offer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/mozliwe_zaplaty"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/typeOffer"
+                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+            <CheckBox
+                android:id="@+id/option1DeliveryOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opcja_dostawy1"
+                app:layout_constraintStart_toStartOf="@+id/title1Offer"
+                app:layout_constraintTop_toBottomOf="@+id/title1Offer" />
+
+            <CheckBox
+                android:id="@+id/option1PaymentOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opcja_zaplaty1"
+                app:layout_constraintStart_toStartOf="@+id/title2Offer2"
+                app:layout_constraintTop_toBottomOf="@+id/title2Offer2" />
+
+            <CheckBox
+                android:id="@+id/option2PaymentOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opcja_zaplaty2"
+                app:layout_constraintStart_toStartOf="@+id/option1PaymentOffer"
+                app:layout_constraintTop_toBottomOf="@+id/option1PaymentOffer" />
+
+            <CheckBox
+                android:id="@+id/option3PaymentOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opcja_zaplaty3"
+                app:layout_constraintStart_toStartOf="@+id/option2PaymentOffer"
+                app:layout_constraintTop_toBottomOf="@+id/option2PaymentOffer" />
+
+            <CheckBox
+                android:id="@+id/option2DeliveryOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opcja_dostawy2"
+                app:layout_constraintStart_toStartOf="@+id/option1DeliveryOffer"
+                app:layout_constraintTop_toBottomOf="@+id/option1DeliveryOffer" />
+
+            <CheckBox
+                android:id="@+id/option3DeliveryOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opcja_dostawy3"
+                app:layout_constraintStart_toStartOf="@+id/option2DeliveryOffer"
+                app:layout_constraintTop_toBottomOf="@+id/option2DeliveryOffer" />
+
+            <Button
+                android:id="@+id/addOffer"
+                style="@style/button_grey"
+                android:layout_marginTop="20dp"
+                android:text="@string/dodaj_oferte"
+                app:backgroundTint="@color/gold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/option3PaymentOffer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

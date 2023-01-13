@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.EBlackGold" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,7 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    
+
     <style name="button_grey">
         <item name="android:layout_width">250dp</item>
         <item name="android:layout_height">48dp</item>
@@ -43,4 +43,13 @@
     </style>
 
     <string name="profil">Profil użytkownika</string>
+
+    <style name="Theme.EBlackGold.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.EBlackGold.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.EBlackGold.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

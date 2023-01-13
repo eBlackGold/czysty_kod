@@ -18,7 +18,7 @@
         android:id="@+id/user_profile"
         android:gravity="center"
         android:layout_marginTop="30dp"
-        android:text="@string/profil"
+        android:text="@string/profil_użytkownika"
         style="@style/title.profile"/>
 
     <ImageView
