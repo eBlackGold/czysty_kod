@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Offers">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/searchOffers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints=""
+                android:background="@drawable/rounded_corners"
+                android:ems="10"
+                android:hint="@string/szukaj"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textPriceOffers1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:text="@string/cena_od"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/searchOffers"
+                app:layout_constraintTop_toBottomOf="@+id/searchOffers" />
+
+            <TextView
+                android:id="@+id/textPriceOffers2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/cena_do"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/cenaOdOffers"
+                app:layout_constraintTop_toTopOf="@+id/textPriceOffers1" />
+
+            <EditText
+                android:id="@+id/cenaOdOffers"
+                android:layout_width="60dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:ems="10"
+                android:inputType="numberSigned"
+                app:layout_constraintStart_toEndOf="@+id/textPriceOffers1"
+                app:layout_constraintTop_toBottomOf="@+id/searchOffers"
+                tools:text="10" />
+
+            <EditText
+                android:id="@+id/cenaDoOffers"
+                android:layout_width="60dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:ems="10"
+                android:inputType="numberSigned"
+                app:layout_constraintStart_toEndOf="@+id/textPriceOffers2"
+                app:layout_constraintTop_toBottomOf="@+id/searchOffers"
+                tools:text="100" />
+
+            <TextView
+                android:id="@+id/typeOffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/wegiel_typ"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textPriceOffers1"
+                app:layout_constraintTop_toBottomOf="@+id/textPriceOffers1" />
+
+            <TextView
+                android:id="@+id/sortOffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/sortuj"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/typeOffers"
+                app:layout_constraintTop_toBottomOf="@+id/typeOffers" />
+
+            <Spinner
+                android:id="@+id/dropdownSearchTypeOffers"
+                android:layout_width="100dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/title_activity_cart"
+                app:layout_constraintStart_toEndOf="@+id/typeOffers"
+                app:layout_constraintTop_toBottomOf="@+id/textPriceOffers1" />
+
+            <Spinner
+                android:id="@+id/dropdownSortOffers"
+                android:layout_width="250dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/title_activity_cart"
+                app:layout_constraintStart_toEndOf="@+id/sortOffers"
+                app:layout_constraintTop_toBottomOf="@+id/dropdownSearchTypeOffers" />
+
+            <TextView
+                android:id="@+id/titleOffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/wyszukane"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/sortOffers"
+                app:layout_constraintTop_toBottomOf="@+id/sortOffers" />
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleOffers"
+                android:divider = "#000"
+                android:dividerHeight = "1dp"
+                android:footerDividersEnabled = "false"
+                android:headerDividersEnabled = "false">
+
+
+            </ListView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

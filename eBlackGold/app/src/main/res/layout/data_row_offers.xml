@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageDataRowOffers"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_box" />
+
+    <TextView
+        android:id="@+id/nameDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/nazwa_produktu"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/imageDataRowOffers" />
+
+    <TextView
+        android:id="@+id/unitsDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/ilosc"
+        app:layout_constraintStart_toStartOf="@+id/nameDataRowOffers"
+        app:layout_constraintTop_toBottomOf="@+id/nameDataRowOffers" />
+
+    <TextView
+        android:id="@+id/priceDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/cena_sztuka"
+        app:layout_constraintStart_toStartOf="@+id/unitsDataRowOffers"
+        app:layout_constraintTop_toBottomOf="@+id/unitsDataRowOffers" />
+
+    <TextView
+        android:id="@+id/typeDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/wegiel_typ"
+        app:layout_constraintStart_toEndOf="@+id/priceDataRowOffers1"
+        app:layout_constraintTop_toTopOf="@+id/priceDataRowOffers1" />
+
+    <TextView
+        android:id="@+id/unitsDataRowOffers1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@+id/unitsDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/unitsDataRowOffers" />
+
+    <TextView
+        android:id="@+id/priceDataRowOffers1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="100 zł"
+        app:layout_constraintStart_toEndOf="@+id/priceDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/priceDataRowOffers" />
+
+    <TextView
+        android:id="@+id/typeDataRowOffers1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Typ1"
+        app:layout_constraintStart_toEndOf="@+id/typeDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/typeDataRowOffers" />
+</androidx.constraintlayout.widget.ConstraintLayout>
