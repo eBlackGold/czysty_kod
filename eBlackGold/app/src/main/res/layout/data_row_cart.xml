@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageDataRowCart"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_box" />
+
+    <TextView
+        android:id="@+id/nameDataRowCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/nazwa_produktu"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageDataRowCart"
+        app:layout_constraintTop_toTopOf="@+id/imageDataRowCart" />
+
+    <TextView
+        android:id="@+id/unitsDataRowCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/ilosc"
+        app:layout_constraintStart_toStartOf="@+id/nameDataRowCart"
+        app:layout_constraintTop_toBottomOf="@+id/nameDataRowCart" />
+
+    <TextView
+        android:id="@+id/priceDataRowCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/cena_sztuka"
+        app:layout_constraintStart_toStartOf="@+id/unitsDataRowCart"
+        app:layout_constraintTop_toBottomOf="@+id/unitsDataRowCart" />
+
+    <TextView
+        android:id="@+id/typeDataRowCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/wegiel_typ"
+        app:layout_constraintStart_toEndOf="@+id/priceDataRowCart1"
+        app:layout_constraintTop_toTopOf="@+id/priceDataRowCart1" />
+
+    <TextView
+        android:id="@+id/unitsDataRowCart1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@+id/unitsDataRowCart"
+        app:layout_constraintTop_toTopOf="@+id/unitsDataRowCart" />
+
+    <TextView
+        android:id="@+id/priceDataRowCart1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="100 zł"
+        app:layout_constraintStart_toEndOf="@+id/priceDataRowCart"
+        app:layout_constraintTop_toTopOf="@+id/priceDataRowCart" />
+
+    <TextView
+        android:id="@+id/typeDataRowCart1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Typ1"
+        app:layout_constraintStart_toEndOf="@+id/typeDataRowCart"
+        app:layout_constraintTop_toTopOf="@+id/typeDataRowCart" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        app:layout_constraintStart_toEndOf="@+id/nameDataRowCart"
+        app:layout_constraintTop_toTopOf="@+id/nameDataRowCart"
+        app:srcCompat="@drawable/ic_edit" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/ic_delete" />
+</androidx.constraintlayout.widget.ConstraintLayout>

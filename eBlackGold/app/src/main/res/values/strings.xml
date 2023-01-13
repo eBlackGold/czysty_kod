@@ -52,5 +52,12 @@
     <string name="opcje_zaplaty">Opcje zapłaty</string>
     <string name="dodaj_do_koszyka">Dodaj do koszyka</string>
     <string name="dodaj_oferte">Dodaj ofertę</string>
+    <string name="cena_od">Cena od: </string>
+    <string name="cena_do">do: </string>
+    <string name="szukaj">Szukaj produktu</string>
+    <string name="sortuj">Sortuj:</string>
+    <string name="wyszukane">Wyszukane</string>
+    <string name="w_koszyku">W Twoim koszyku</string>
+    <string name="zaplac">Zapłać</string>
 
 </resources>
