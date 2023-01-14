@@ -58,5 +58,6 @@
     <string name="wyszukane">Wyszukane</string>
     <string name="w_koszyku">W Twoim koszyku</string>
     <string name="zaplac">Zapłać</string>
+    <string name="ilosc_sztuk">Ilość sztuk:</string>
 
 </resources>
