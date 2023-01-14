@@ -29,8 +29,8 @@
 
             <TextView
                 android:id="@+id/productNameAddToCart"
-                android:layout_width="165dp"
-                android:layout_height="33dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/nazwa_produktu"
                 android:minHeight="48dp"
@@ -42,8 +42,8 @@
 
             <TextView
                 android:id="@+id/sellerNameAddToCart"
-                android:layout_width="161dp"
-                android:layout_height="26dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:ems="10"
                 android:hint="@string/nazwa_sprzedawcy"
@@ -55,7 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/productNameAddToCart" />
 
             <TextView
-                android:id="@+id/unitsAddToCart"
+                android:id="@+id/unitsTextAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -65,57 +65,57 @@
                 app:layout_constraintTop_toBottomOf="@+id/imgAddToCart" />
 
             <TextView
-                android:id="@+id/priceAddToCart"
+                android:id="@+id/priceTextAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/cena_sztuka"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/unitsAddToCart"
-                app:layout_constraintTop_toBottomOf="@+id/unitsAddToCart" />
+                app:layout_constraintStart_toStartOf="@+id/unitsTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/unitsTextAddToCart" />
 
             <TextView
-                android:id="@+id/unitsOfProductAddToCart"
+                android:id="@+id/unitsInStockAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:ems="10"
                 android:text="10"
-                app:layout_constraintStart_toEndOf="@+id/unitsAddToCart"
-                app:layout_constraintTop_toTopOf="@+id/unitsAddToCart" />
+                app:layout_constraintStart_toEndOf="@+id/unitsTextAddToCart"
+                app:layout_constraintTop_toTopOf="@+id/unitsTextAddToCart" />
 
             <TextView
-                android:id="@+id/priceOfProductAddToCart"
+                android:id="@+id/priceAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:text="99,44"
-                app:layout_constraintStart_toEndOf="@+id/priceAddToCart"
-                app:layout_constraintTop_toBottomOf="@+id/unitsAddToCart" />
+                app:layout_constraintStart_toEndOf="@+id/priceTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/unitsTextAddToCart" />
 
 
             <TextView
-                android:id="@+id/typeAddToCart"
+                android:id="@+id/typeTextAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/wegiel_typ"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/priceAddToCart"
-                app:layout_constraintTop_toBottomOf="@+id/priceAddToCart" />
+                app:layout_constraintStart_toStartOf="@+id/priceTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/priceTextAddToCart" />
 
             <TextView
-                android:id="@+id/typeOptionAddToCart"
+                android:id="@+id/typeAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/typ1"
                 android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/typeAddToCart"
-                app:layout_constraintTop_toBottomOf="@+id/priceAddToCart" />
+                app:layout_constraintStart_toEndOf="@+id/typeTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/priceTextAddToCart" />
 
             <View
                 android:id="@+id/divider2"
@@ -126,7 +126,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/typeOptionAddToCart" />
+                app:layout_constraintTop_toBottomOf="@+id/typeAddToCart" />
 
             <View
                 android:id="@+id/divider3"
@@ -145,7 +145,7 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/opcje_dostawy"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/typeAddToCart"
+                app:layout_constraintStart_toStartOf="@+id/typeTextAddToCart"
                 app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
             <TextView

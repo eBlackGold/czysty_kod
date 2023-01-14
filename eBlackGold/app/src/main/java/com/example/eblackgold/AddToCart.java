@@ -2,7 +2,6 @@ package com.example.eblackgold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +20,7 @@ public class AddToCart extends AppCompatActivity {
 
         TextView productName = findViewById(R.id.productNameAddToCart);
         TextView sellerName = findViewById(R.id.sellerNameAddToCart);
-        TextView unitsInStock = findViewById(R.id.unitsAddToCart);
+        TextView unitsInStock = findViewById(R.id.unitsInStockAddToCart);
         TextView price = findViewById(R.id.priceAddToCart);
         TextView type = findViewById(R.id.typeAddToCart);
 
