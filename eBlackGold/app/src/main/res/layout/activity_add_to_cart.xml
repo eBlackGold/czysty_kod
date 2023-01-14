@@ -28,7 +28,7 @@
                 app:srcCompat="@drawable/ic_box" />
 
             <TextView
-                android:id="@+id/nameAddToCart"
+                android:id="@+id/productNameAddToCart"
                 android:layout_width="165dp"
                 android:layout_height="33dp"
                 android:ems="10"
@@ -41,7 +41,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imgAddToCart" />
 
             <TextView
-                android:id="@+id/nameSellerAddToCart"
+                android:id="@+id/sellerNameAddToCart"
                 android:layout_width="161dp"
                 android:layout_height="26dp"
                 android:layout_marginTop="8dp"
@@ -51,8 +51,8 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/nameAddToCart"
-                app:layout_constraintTop_toBottomOf="@+id/nameAddToCart" />
+                app:layout_constraintStart_toStartOf="@+id/productNameAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/productNameAddToCart" />
 
             <TextView
                 android:id="@+id/unitsAddToCart"
@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/unitsAddToCart" />
 
             <TextView
-                android:id="@+id/priceOfProductAddToCart"
+                android:id="@+id/unitsOfProductAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="@+id/unitsAddToCart" />
 
             <TextView
-                android:id="@+id/unitsOfProductAddToCart"
+                android:id="@+id/priceOfProductAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -159,7 +159,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
             <Button
-                android:id="@+id/addOffer"
+                android:id="@+id/buttonAddToCart"
                 style="@style/button_grey"
                 android:layout_marginTop="20dp"
                 android:text="@string/dodaj_do_koszyka"
@@ -171,57 +171,52 @@
 
             <RadioGroup
                 android:id="@+id/radioGroupDeliveryAddToCart"
-                android:layout_width="211dp"
-                android:layout_height="139dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="@+id/title1AddToCart"
                 app:layout_constraintTop_toBottomOf="@+id/title1AddToCart">
 
                 <RadioButton
-                    android:id="@+id/radioButtonDelivery1"
+                    android:id="@+id/radioButtonPersonalPickup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/opcja_dostawy1" />
+                    android:text="@string/odbior_osobisty" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonDelivery2"
+                    android:id="@+id/radioButtonCourier"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/opcja_dostawy2" />
+                    android:text="@string/kurier" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonDelivery3"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="@string/opcja_dostawy3" />
             </RadioGroup>
 
             <RadioGroup
                 android:id="@+id/radioGroupPaymentAddToCart"
-                android:layout_width="211dp"
-                android:layout_height="139dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="@+id/title2AddToCart"
                 app:layout_constraintTop_toBottomOf="@+id/title2AddToCart">
 
                 <RadioButton
-                    android:id="@+id/radioButtonPayment1"
+                    android:id="@+id/radioButtonBlik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/opcja_zaplaty1" />
+                    android:text="@string/blik" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonPayment2"
+                    android:id="@+id/radioButtonTransfer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/opcja_zaplaty2" />
+                    android:text="@string/przelew_bankowy" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonPayment3"
+                    android:id="@+id/radioButtonCash"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:minHeight="48dp"
-                    android:text="@string/opcja_zaplaty3" />
+                    android:text="@string/za_pobraniem" />
             </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
