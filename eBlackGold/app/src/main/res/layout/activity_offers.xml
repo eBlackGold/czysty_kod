@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textPriceOffers1"
+                android:id="@+id/prcieTextOffers1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -43,67 +43,67 @@
                 app:layout_constraintTop_toBottomOf="@+id/searchOffers" />
 
             <TextView
-                android:id="@+id/textPriceOffers2"
+                android:id="@+id/priceTextOffers2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:text="@string/cena_do"
                 android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/cenaOdOffers"
-                app:layout_constraintTop_toTopOf="@+id/textPriceOffers1" />
+                app:layout_constraintStart_toEndOf="@+id/priceFromOffers"
+                app:layout_constraintTop_toTopOf="@+id/prcieTextOffers1" />
 
             <EditText
-                android:id="@+id/cenaOdOffers"
+                android:id="@+id/priceFromOffers"
                 android:layout_width="60dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="10dp"
                 android:ems="10"
                 android:inputType="numberSigned"
-                app:layout_constraintStart_toEndOf="@+id/textPriceOffers1"
+                app:layout_constraintStart_toEndOf="@+id/prcieTextOffers1"
                 app:layout_constraintTop_toBottomOf="@+id/searchOffers"
                 tools:text="10" />
 
             <EditText
-                android:id="@+id/cenaDoOffers"
+                android:id="@+id/priceToOffers"
                 android:layout_width="60dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="10dp"
                 android:ems="10"
                 android:inputType="numberSigned"
-                app:layout_constraintStart_toEndOf="@+id/textPriceOffers2"
+                app:layout_constraintStart_toEndOf="@+id/priceTextOffers2"
                 app:layout_constraintTop_toBottomOf="@+id/searchOffers"
                 tools:text="100" />
 
             <TextView
-                android:id="@+id/typeOffers"
+                android:id="@+id/typeTextOffers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="@string/wegiel_typ"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/textPriceOffers1"
-                app:layout_constraintTop_toBottomOf="@+id/textPriceOffers1" />
+                app:layout_constraintStart_toStartOf="@+id/prcieTextOffers1"
+                app:layout_constraintTop_toBottomOf="@+id/prcieTextOffers1" />
 
             <TextView
-                android:id="@+id/sortOffers"
+                android:id="@+id/sortTextOffers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="@string/sortuj"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/typeOffers"
-                app:layout_constraintTop_toBottomOf="@+id/typeOffers" />
+                app:layout_constraintStart_toStartOf="@+id/typeTextOffers"
+                app:layout_constraintTop_toBottomOf="@+id/typeTextOffers" />
 
             <Spinner
-                android:id="@+id/dropdownSearchTypeOffers"
+                android:id="@+id/dropdownTypeOffers"
                 android:layout_width="100dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/title_activity_cart"
-                app:layout_constraintStart_toEndOf="@+id/typeOffers"
-                app:layout_constraintTop_toBottomOf="@+id/textPriceOffers1" />
+                app:layout_constraintStart_toEndOf="@+id/typeTextOffers"
+                app:layout_constraintTop_toBottomOf="@+id/prcieTextOffers1" />
 
             <Spinner
                 android:id="@+id/dropdownSortOffers"
@@ -111,19 +111,29 @@
                 android:layout_height="54dp"
                 android:layout_marginStart="10dp"
                 android:contentDescription="@string/title_activity_cart"
-                app:layout_constraintStart_toEndOf="@+id/sortOffers"
-                app:layout_constraintTop_toBottomOf="@+id/dropdownSearchTypeOffers" />
+                app:layout_constraintStart_toEndOf="@+id/sortTextOffers"
+                app:layout_constraintTop_toBottomOf="@+id/dropdownTypeOffers" />
+
+            <Button
+                android:id="@+id/buttonSearchOffers"
+                style="@style/button_grey"
+                android:layout_marginTop="20dp"
+                android:text="@string/szukaj"
+                app:backgroundTint="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dropdownSortOffers" />
 
             <TextView
                 android:id="@+id/titleOffers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/wyszukane"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/sortOffers"
-                app:layout_constraintTop_toBottomOf="@+id/sortOffers" />
+                app:layout_constraintStart_toStartOf="@+id/sortTextOffers"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSearchOffers" />
 
             <ListView
                 android:id="@+id/listView"

@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/ic_box" />
 
     <TextView
-        android:id="@+id/nameDataRowOffers"
+        android:id="@+id/productNameDataRowOffers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -27,56 +27,56 @@
         app:layout_constraintTop_toTopOf="@+id/imageDataRowOffers" />
 
     <TextView
-        android:id="@+id/unitsDataRowOffers"
+        android:id="@+id/unitsTextDataRowOffers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/ilosc"
-        app:layout_constraintStart_toStartOf="@+id/nameDataRowOffers"
-        app:layout_constraintTop_toBottomOf="@+id/nameDataRowOffers" />
+        app:layout_constraintStart_toStartOf="@+id/productNameDataRowOffers"
+        app:layout_constraintTop_toBottomOf="@+id/productNameDataRowOffers" />
+
+    <TextView
+        android:id="@+id/priceTextDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/cena_sztuka"
+        app:layout_constraintStart_toStartOf="@+id/unitsTextDataRowOffers"
+        app:layout_constraintTop_toBottomOf="@+id/unitsTextDataRowOffers" />
+
+    <TextView
+        android:id="@+id/typeTextDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/wegiel_typ"
+        app:layout_constraintStart_toEndOf="@+id/priceDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/priceDataRowOffers" />
+
+    <TextView
+        android:id="@+id/unitsDataRowOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@+id/unitsTextDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/unitsTextDataRowOffers" />
 
     <TextView
         android:id="@+id/priceDataRowOffers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/cena_sztuka"
-        app:layout_constraintStart_toStartOf="@+id/unitsDataRowOffers"
-        app:layout_constraintTop_toBottomOf="@+id/unitsDataRowOffers" />
+        android:layout_marginStart="5dp"
+        android:text="100 zł"
+        app:layout_constraintStart_toEndOf="@+id/priceTextDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/priceTextDataRowOffers" />
 
     <TextView
         android:id="@+id/typeDataRowOffers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="@string/wegiel_typ"
-        app:layout_constraintStart_toEndOf="@+id/priceDataRowOffers1"
-        app:layout_constraintTop_toTopOf="@+id/priceDataRowOffers1" />
-
-    <TextView
-        android:id="@+id/unitsDataRowOffers1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="5"
-        app:layout_constraintStart_toEndOf="@+id/unitsDataRowOffers"
-        app:layout_constraintTop_toTopOf="@+id/unitsDataRowOffers" />
-
-    <TextView
-        android:id="@+id/priceDataRowOffers1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="100 zł"
-        app:layout_constraintStart_toEndOf="@+id/priceDataRowOffers"
-        app:layout_constraintTop_toTopOf="@+id/priceDataRowOffers" />
-
-    <TextView
-        android:id="@+id/typeDataRowOffers1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:text="Typ1"
-        app:layout_constraintStart_toEndOf="@+id/typeDataRowOffers"
-        app:layout_constraintTop_toTopOf="@+id/typeDataRowOffers" />
+        app:layout_constraintStart_toEndOf="@+id/typeTextDataRowOffers"
+        app:layout_constraintTop_toTopOf="@+id/typeTextDataRowOffers" />
 </androidx.constraintlayout.widget.ConstraintLayout>
