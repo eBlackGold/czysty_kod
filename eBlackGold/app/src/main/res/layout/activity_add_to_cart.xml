@@ -31,12 +31,11 @@
                 android:id="@+id/productNameAddToCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:ems="10"
                 android:hint="@string/nazwa_produktu"
                 android:minHeight="48dp"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.484"
                 app:layout_constraintStart_toEndOf="@+id/imgAddToCart"
                 app:layout_constraintTop_toTopOf="@+id/imgAddToCart" />
 

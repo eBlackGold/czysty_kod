@@ -2,6 +2,7 @@ package com.example.eblackgold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddOffer extends AppCompatActivity {
 
@@ -53,9 +55,15 @@ public class AddOffer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Kod odpowiadający za dodanie oferty do bazy
+
+                //Jeśli brakuje, któregoś z podanych paramterów to wyświetl powiadomienie
+                Context context = getApplicationContext();
+                CharSequence text = "Brakuje parametru oferty";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
-
-        //Kod podmieniający wszystkie nazwy itp. na te pobrane z bazy
     }
 }
