@@ -45,7 +45,7 @@
             </ListView>
 
             <Button
-                android:id="@+id/payCart"
+                android:id="@+id/buttonPayCart"
                 style="@style/button_grey"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="10dp"
