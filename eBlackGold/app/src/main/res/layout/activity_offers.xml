@@ -136,16 +136,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/buttonSearchOffers" />
 
             <ListView
-                android:id="@+id/listView"
+                android:id="@+id/productListOffers"
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleOffers"
-                android:divider = "#000"
-                android:dividerHeight = "1dp"
-                android:footerDividersEnabled = "false"
-                android:headerDividersEnabled = "false">
+                app:layout_constraintTop_toBottomOf="@+id/titleOffers">
 
 
             </ListView>

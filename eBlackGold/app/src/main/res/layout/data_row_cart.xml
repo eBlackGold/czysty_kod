@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imageDataRowCart"
@@ -40,7 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/cena_sztuka"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/unitsTextDataRowCart"
         app:layout_constraintTop_toBottomOf="@+id/unitsTextDataRowCart" />
 
@@ -80,21 +82,30 @@
         app:layout_constraintStart_toEndOf="@+id/typeTextDataRowCart"
         app:layout_constraintTop_toTopOf="@+id/typeTextDataRowCart" />
 
-    <ImageView
+    <Button
         android:id="@+id/buttonEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="-10dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="edit button"
+        android:drawableBottom="@drawable/ic_edit"
         app:layout_constraintStart_toEndOf="@+id/productNameDataRowCart"
-        app:layout_constraintTop_toTopOf="@+id/productNameDataRowCart"
-        app:srcCompat="@drawable/ic_edit" />
+        app:layout_constraintTop_toTopOf="@+id/productNameDataRowCart" />
 
-    <ImageView
+    <Button
         android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="delete button"
+        android:drawableBottom="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonEdit"
-        app:layout_constraintTop_toTopOf="@+id/buttonEdit"
-        app:srcCompat="@drawable/ic_delete" />
+        app:layout_constraintTop_toTopOf="@+id/buttonEdit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
