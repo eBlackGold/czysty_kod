@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
         String emailValidation = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
         EditText email = findViewById(R.id.email_login);
         EditText password = findViewById(R.id.password_login);
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Przejście do rejestracji
-                Intent intent = new Intent(getBaseContext(), Register.class);
+                Intent intent = new Intent(getBaseContext(), Offers.class);
                 startActivity(intent);
             }
         });

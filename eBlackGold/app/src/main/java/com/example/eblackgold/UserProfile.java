@@ -13,6 +13,8 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
+        getSupportActionBar().hide();
+
         EditText name = findViewById(R.id.name);
         EditText surname = findViewById(R.id.surname);
         EditText address = findViewById(R.id.address);

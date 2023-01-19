@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eBlackGold</string>
+    <string name="app_name"><font color='#FFFFFF'>eBlack</font><font color='#FFA829'>Gold</font></string>
     <string name="eblackgold">eBlack<font color='#FFA829'>Gold</font></string>
     <string name="eblackgold_bar"><font color='#FFFFFF'>eBlack</font><font color='#FFA829'>Gold</font></string>
     <string name="logowanie">Logowanie</string>

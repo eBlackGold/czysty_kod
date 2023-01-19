@@ -16,6 +16,8 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        getSupportActionBar().hide();
+
         String emailValidation = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
         EditText email = findViewById(R.id.email_register);
         EditText password = findViewById(R.id.password_register);
