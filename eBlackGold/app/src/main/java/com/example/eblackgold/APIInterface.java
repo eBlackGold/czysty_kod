@@ -16,7 +16,7 @@ public interface APIInterface {
     Call<AddProductModel> addProduct(@Body AddProductModel product);
 
     @POST("/api/Authorization/login/")
-    Call<LoginAuthorizationModel> authorizeLogin(@Body LoginAuthorizationModel auth);
+    Call<Void> authorizeLogin(@Body LoginAuthorizationModel auth);
 
     @GET("/api/Product/get-all-products/")
     Call<List<AddProductModel>> getAllProducts();

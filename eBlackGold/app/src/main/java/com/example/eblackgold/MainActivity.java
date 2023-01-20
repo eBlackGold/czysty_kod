@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,13 +30,30 @@ public class MainActivity extends AppCompatActivity {
         TextView restorePassword = findViewById(R.id.restore);
         Button login = findViewById(R.id.login);
         TextView register = findViewById(R.id.register_page);
+        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Tu musi być jeszcze && walidacja z bazy
-                if (email.toString().matches(emailValidation) && !email.toString().isEmpty()) {
-                    // Walidacja hasła z bazy
+                if ((email.getText().toString().matches(emailValidation) && !email.getText().toString().isEmpty())) {
+                    LoginAuthorizationModel customer = new LoginAuthorizationModel(email.getText().toString(), password.getText().toString(), "Customer");
+                    Call<Void> call = apiInterface.authorizeLogin(customer);
+                    call.enqueue(new Callback<Void>() {
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+                            if(response.code()==200) {
+                                Intent intent = new Intent(getBaseContext(), Offers.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Błąd " + response.code(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Void> call, Throwable t) {
+                            Toast.makeText(getApplicationContext(), "Błąd logowania. " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
                 else {
                     Toast.makeText(getBaseContext(),"Nieprawidłowy adres e-mail", Toast.LENGTH_SHORT).show();

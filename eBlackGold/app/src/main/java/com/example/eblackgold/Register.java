@@ -2,6 +2,7 @@ package com.example.eblackgold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +42,9 @@ public class Register extends AppCompatActivity {
                             public void onResponse(Call<AddCustomerModel> call, Response<AddCustomerModel> response) {
                                 if(response.code()==200) {
                                     AddCustomerModel customerResponse = response.body();
-                                    Toast.makeText(getApplicationContext(), "Utworzono użytkownika " + customerResponse.Name + " " + customerResponse.Surname, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Pomyślnie utworzono użytkownika!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                                    startActivity(intent);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Błąd " + response.code(), Toast.LENGTH_SHORT).show();
                                 }
