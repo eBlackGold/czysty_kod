@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Przejście do rejestracji
-                Intent intent = new Intent(getBaseContext(), Offers.class);
+                Intent intent = new Intent(getBaseContext(), Register.class);
                 startActivity(intent);
             }
         });
