@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
                             if(response.code()==200) {
-                                Intent intent = new Intent(getBaseContext(), SellerProfile.class);
+                                TemporaryData.username = email.getText().toString();
+                                Intent intent = new Intent(getBaseContext(), Offers.class);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Błąd " + response.code(), Toast.LENGTH_SHORT).show();

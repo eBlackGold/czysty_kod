@@ -79,6 +79,15 @@ public class Offers extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         //position -> index w liście
+                        ProductResponse offer = offers.get(position);
+                        //ProductOrderModel item = new ProductOrderModel((int) offer.id, 1);
+                        ItemModel item = new ItemModel();
+                        item.id = (int) offer.id;
+                        item.name = offer.Name;
+                        item.quantity = 1;
+                        item.unitPrice = Double.parseDouble(offer.unitPrice);
+
+                        TemporaryData.selectedItem = item;
                         Intent intent = new Intent(getBaseContext(), AddToCart.class);
                         startActivity(intent);
                     }
@@ -90,10 +99,6 @@ public class Offers extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT);
             }
         });
-
-
-        //Log.d("prod list", productNamesList[0].toString());
-
 
         Spinner dropdownType = findViewById(R.id.dropdownTypeOffers);
         String[] types = new String[]{Integer.toString(R.string.typ1), Integer.toString(R.string.typ2), Integer.toString(R.string.typ3)};
@@ -108,8 +113,6 @@ public class Offers extends AppCompatActivity {
         TextView searchText =  findViewById(R.id.searchOffers);
         EditText priceFrom = findViewById(R.id.priceFromOffers);
         EditText priceTo = findViewById(R.id.priceToOffers);
-
-
 
 
         Button searchOffers = findViewById(R.id.buttonSearchOffers);

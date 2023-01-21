@@ -7,4 +7,9 @@ public class ProductOrderModel {
     public int ProductId;
     @SerializedName("Quantity")
     public int Quantity;
+
+    public ProductOrderModel(int id, int quantity) {
+        this.ProductId = id;
+        this.Quantity = quantity;
+    }
 }

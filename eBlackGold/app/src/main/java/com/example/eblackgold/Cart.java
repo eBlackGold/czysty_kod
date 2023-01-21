@@ -27,16 +27,47 @@ public class Cart extends AppCompatActivity {
     APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
     //Na sztywno podane wartości parametrów dla produktów do testowania listy
-    String productNamesList[] = {"Produkt1", "Produkt2", "Produkt3"};
-    String unitsList[] = {"30", "10", "999"};
-    String pricesList[] = {"30zł", "1200zł", "475zł"};
-    String typesList[] = {Integer.toString(R.string.typ1), Integer.toString(R.string.typ2), Integer.toString(R.string.typ3)};
-    int imagesList[] = {R.drawable.ic_box, R.drawable.ic_box, R.drawable.ic_box};
+//    String productNamesList[] = {"Produkt1", "Produkt2", "Produkt3"};
+//    String unitsList[] = {"30", "10", "999"};
+//    String pricesList[] = {"30zł", "1200zł", "475zł"};
+//    String typesList[] = {Integer.toString(R.string.typ1), Integer.toString(R.string.typ2), Integer.toString(R.string.typ3)};
+//    int imagesList[] = {R.drawable.ic_box, R.drawable.ic_box, R.drawable.ic_box};
+
+    List<String> names = new ArrayList<String>();
+    List<String> quantity = new ArrayList<String>();
+    List<String> prices = new ArrayList<String>();
+    List<String> prodTypes = new ArrayList<String>();
+    List<Integer> images = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+        List<ItemModel> offers = TemporaryData.getCart();
+        for(int i=0;i<offers.size();i++) {
+            names.add(offers.get(i).name);
+            quantity.add(String.valueOf(offers.get(i).quantity));
+            prices.add(String.valueOf(offers.get(i).unitPrice));
+            //prodTypes.add(offers.get(i).CoalType);
+            images.add(R.drawable.ic_box);
+        }
+
+        int n = names.size();
+        //Na sztywno podane wartości parametrów dla produktów do testowania listy
+        String productNamesList[] = new String[n];//{"Produkt1", "Produkt2", "Produkt3"};
+        String unitsList[] = new String[n];//{"30", "10", "999"};
+        String pricesList[] = new String[n];//{"30zł", "1200zł", "475zł"};
+        String typesList[] = new String[n];//{Integer.toString(R.string.typ1), Integer.toString(R.string.typ2), Integer.toString(R.string.typ3)};
+        int imagesList[] = new int[n];//{R.drawable.ic_box, R.drawable.ic_box, R.drawable.ic_box};
+        for(int i=0;i<n;i++) {
+            productNamesList[i] = names.get(i);
+            unitsList[i] = quantity.get(i);
+            pricesList[i] = prices.get(i);
+            //typesList[i] = prodTypes.get(i);
+            imagesList[i] = images.get(i);
+        }
+
 
         ListView cartList = findViewById(R.id.productListCart);
         CartListAdapter cartListAdapter = new CartListAdapter(getApplicationContext(), productNamesList, unitsList, pricesList, typesList, imagesList);
@@ -56,13 +87,14 @@ public class Cart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Kod usuwający rzeczy z koszyka i dodanie ich do zamówień sprzedającego
-                List<ProductOrderModel> orderItems = new ArrayList<>(); // tu przypisać rzeczy z koszyka i je usunąć
-                SubmitOrderModel order = new SubmitOrderModel(""    , orderItems);
+                List<ProductOrderModel> orderItems = TemporaryData.getOrderCart(); // tu przypisać rzeczy z koszyka i je usunąć
+                SubmitOrderModel order = new SubmitOrderModel(TemporaryData.username, orderItems);
                 Call<Void> call = apiInterface.submitOrder(order);
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-
+                        Intent intent = new Intent(getBaseContext(), Offers.class);
+                        startActivity(intent);
                     }
 
                     @Override

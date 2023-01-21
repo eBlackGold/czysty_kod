@@ -40,6 +40,11 @@ public class AddToCart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Kod odpowiadający za dodanie produktu do koszyka
+                TemporaryData.AddToCart(TemporaryData.selectedItem);
+
+                Intent intent = new Intent(getBaseContext(), Cart.class);
+                startActivity(intent);
+                Toast.makeText(getBaseContext(), "Dodano do koszyka", Toast.LENGTH_SHORT);
             }
         });
     }
