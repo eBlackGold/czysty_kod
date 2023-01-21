@@ -19,7 +19,7 @@ public interface APIInterface {
     Call<AddCustomerModel> registerCustomer(@Body AddCustomerModel customer);
 
     @POST("/api/Product/add-product/")
-    Call<AddProductModel> addProduct(@Body AddProductModel product);
+    Call<Void> addProduct(@Body AddProductModel product);
 
     @POST("/api/Authorization/login/")
     Call<Void> authorizeLogin(@Body LoginAuthorizationModel auth);

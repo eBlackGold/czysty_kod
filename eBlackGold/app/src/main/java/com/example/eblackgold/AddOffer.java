@@ -19,12 +19,21 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eblackgold.connection.APIClient;
+import com.example.eblackgold.connection.APIInterface;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class AddOffer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_offer);
+
+        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
         ImageView imgOfProduct = findViewById(R.id.imgAddOffer);
 
@@ -59,7 +68,23 @@ public class AddOffer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Kod odpowiadający za dodanie oferty do bazy
+                AddProductModel product = new AddProductModel();
+                product.Name = productName.getText().toString();
+                product.UnitsInStock = Integer.parseInt(units.getText().toString());
+                product.Price = Double.parseDouble(price.getText().toString());
 
+                Call<Void> call = apiInterface.addProduct(product);
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+
+                    }
+                });
                 //Jeśli brakuje, któregoś z podanych paramterów to wyświetl powiadomienie
                 Context context = getApplicationContext();
                 CharSequence text = "Brakuje parametru oferty";
