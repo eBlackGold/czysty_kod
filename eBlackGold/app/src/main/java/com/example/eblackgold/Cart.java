@@ -24,15 +24,13 @@ import retrofit2.Response;
 
 public class Cart extends AppCompatActivity {
 
-    APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-
     //Na sztywno podane wartości parametrów dla produktów do testowania listy
 //    String productNamesList[] = {"Produkt1", "Produkt2", "Produkt3"};
 //    String unitsList[] = {"30", "10", "999"};
 //    String pricesList[] = {"30zł", "1200zł", "475zł"};
 //    String typesList[] = {Integer.toString(R.string.typ1), Integer.toString(R.string.typ2), Integer.toString(R.string.typ3)};
 //    int imagesList[] = {R.drawable.ic_box, R.drawable.ic_box, R.drawable.ic_box};
-
+    APIInterface apiInterface = LoadBalancer.get();
     List<String> names = new ArrayList<String>();
     List<String> quantity = new ArrayList<String>();
     List<String> prices = new ArrayList<String>();
@@ -86,6 +84,7 @@ public class Cart extends AppCompatActivity {
         buttonPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                APIInterface apiInterface = LoadBalancer.get();
                 //Kod usuwający rzeczy z koszyka i dodanie ich do zamówień sprzedającego
                 List<ProductOrderModel> orderItems = TemporaryData.getOrderCart(); // tu przypisać rzeczy z koszyka i je usunąć
                 SubmitOrderModel order = new SubmitOrderModel(TemporaryData.username, orderItems);

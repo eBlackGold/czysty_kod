@@ -40,7 +40,7 @@ public class Offers extends AppCompatActivity {
         setContentView(R.layout.activity_offers);
 
 
-        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
+        APIInterface apiInterface = LoadBalancer.get();
 
         List<String> names = new ArrayList<String>();
         List<String> quantity = new ArrayList<String>();

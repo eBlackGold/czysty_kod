@@ -33,8 +33,6 @@ public class AddOffer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_offer);
 
-        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-
         ImageView imgOfProduct = findViewById(R.id.imgAddOffer);
 
         EditText productName = findViewById(R.id.productNameAddOffer);
@@ -72,6 +70,7 @@ public class AddOffer extends AppCompatActivity {
                 product.Name = productName.getText().toString();
                 product.UnitsInStock = Integer.parseInt(units.getText().toString());
                 product.Price = Double.parseDouble(price.getText().toString());
+                APIInterface apiInterface = LoadBalancer.get();
 
                 Call<Void> call = apiInterface.addProduct(product);
                 call.enqueue(new Callback<Void>() {

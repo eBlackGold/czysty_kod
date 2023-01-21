@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
         TextView restorePassword = findViewById(R.id.restore);
         Button login = findViewById(R.id.login);
         TextView register = findViewById(R.id.register_page);
-        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
+        //APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if ((email.getText().toString().matches(emailValidation) && !email.getText().toString().isEmpty())) {
-
+                    APIInterface apiInterface = LoadBalancer.get();
                     LoginAuthorizationModel customer = new LoginAuthorizationModel(email.getText().toString(), password.getText().toString(), "Customer");
                     TemporaryData.role = "Customer";
                     Call<Void> call = apiInterface.authorizeLogin(customer);

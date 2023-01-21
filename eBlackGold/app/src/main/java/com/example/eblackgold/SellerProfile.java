@@ -24,7 +24,7 @@ public class SellerProfile extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
+        APIInterface apiInterface = LoadBalancer.get();
 
         List<String> names = new ArrayList<String>();
         List<String> quantity = new ArrayList<String>();

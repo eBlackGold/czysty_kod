@@ -34,11 +34,12 @@ public class Register extends AppCompatActivity {
         TextView login = findViewById(R.id.login_page);
         RadioButton buyer = findViewById(R.id.buyer);
         RadioButton seller = findViewById(R.id.seller);
-        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
+        //APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                APIInterface apiInterface = LoadBalancer.get();
                 if ((email.getText().toString().matches(emailValidation) && !email.getText().toString().isEmpty())) {
                     if (password.getText().toString().matches(passwordR.getText().toString())) {
                         // Zapis użytkownika do bazy, przejście do aktywności konto
