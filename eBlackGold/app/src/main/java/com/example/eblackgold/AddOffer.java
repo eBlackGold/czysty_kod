@@ -110,8 +110,16 @@ public class AddOffer extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.buttonProfile:
-                Intent intentProfile = new Intent(getBaseContext(), UserProfile.class);
-                startActivity(intentProfile);
+                if(true) //jest użytkownikiem
+                {
+                    Intent intentUserProfile = new Intent(getBaseContext(), UserProfile.class);
+                    startActivity(intentUserProfile);
+                }
+                else //jest sprzedawcą
+                {
+                    Intent intentSellerProfile = new Intent(getBaseContext(), UserProfile.class);
+                    startActivity(intentSellerProfile);
+                }
                 break;
 
             case R.id.buttonCart:

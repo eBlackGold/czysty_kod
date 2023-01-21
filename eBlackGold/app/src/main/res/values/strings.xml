@@ -59,5 +59,7 @@
     <string name="w_koszyku">W Twoim koszyku</string>
     <string name="zaplac">Zapłać</string>
     <string name="ilosc_sztuk">Ilość sztuk:</string>
+    <string name="profil_użytkownika_nav">Profil użytkownika</string>
+    <string name="profil_sprzedawcy_nav">Profil sprzedawcy</string>
 
 </resources>

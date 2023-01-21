@@ -1,10 +1,13 @@
 package com.example.eblackgold;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -123,5 +126,48 @@ public class Offers extends AppCompatActivity {
                 //Kod wyświetlający wyszukane oferty
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch(item.getItemId())
+        {
+            case R.id.buttonProfile:
+                if(true) //jest użytkownikiem
+                {
+                    Intent intentUserProfile = new Intent(getBaseContext(), UserProfile.class);
+                    startActivity(intentUserProfile);
+                }
+                else //jest sprzedawcą
+                {
+                    Intent intentSellerProfile = new Intent(getBaseContext(), UserProfile.class);
+                    startActivity(intentSellerProfile);
+                }
+                break;
+
+            case R.id.buttonCart:
+                Intent intentCart = new Intent(getBaseContext(), Cart.class);
+                startActivity(intentCart);
+                break;
+
+            case R.id.logout:
+                //Wylogowanie użytkownika
+                Intent intentLogin = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intentLogin);
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
