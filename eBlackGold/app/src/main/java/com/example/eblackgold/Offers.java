@@ -142,14 +142,14 @@ public class Offers extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.buttonProfile:
-                if(true) //jest użytkownikiem
+                if(TemporaryData.role == "Customer") //jest użytkownikiem
                 {
                     Intent intentUserProfile = new Intent(getBaseContext(), UserProfile.class);
                     startActivity(intentUserProfile);
                 }
                 else //jest sprzedawcą
                 {
-                    Intent intentSellerProfile = new Intent(getBaseContext(), UserProfile.class);
+                    Intent intentSellerProfile = new Intent(getBaseContext(), SellerProfile.class);
                     startActivity(intentSellerProfile);
                 }
                 break;

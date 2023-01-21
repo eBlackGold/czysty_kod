@@ -77,19 +77,12 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <ListView
         android:id="@+id/history"
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/user_data">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
-    </ScrollView>
+    </ListView>
 
 </RelativeLayout>

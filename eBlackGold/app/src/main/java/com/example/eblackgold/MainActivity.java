@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 if ((email.getText().toString().matches(emailValidation) && !email.getText().toString().isEmpty())) {
 
                     LoginAuthorizationModel customer = new LoginAuthorizationModel(email.getText().toString(), password.getText().toString(), "Customer");
+                    TemporaryData.role = "Customer";
                     Call<Void> call = apiInterface.authorizeLogin(customer);
                     call.enqueue(new Callback<Void>() {
                         @Override
@@ -52,7 +53,25 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent = new Intent(getBaseContext(), Offers.class);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Błąd " + response.code(), Toast.LENGTH_SHORT).show();
+                                customer.role = "Supplier";
+                                TemporaryData.role = "Supplier";
+                                Call<Void> call2 = apiInterface.authorizeLogin(customer);
+                                call2.enqueue(new Callback<Void>() {
+                                    @Override
+                                    public void onResponse(Call<Void> call, Response<Void> response) {
+                                        if(response.code()==200) {
+                                            TemporaryData.username = email.getText().toString();
+                                            Intent intent = new Intent(getBaseContext(), Offers.class);
+                                            startActivity(intent);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Void> call, Throwable t) {
+                                        Toast.makeText(getApplicationContext(), "Błąd logowania. " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                //Toast.makeText(getApplicationContext(), "Błąd " + response.code(), Toast.LENGTH_SHORT).show();
                             }
                         }
 

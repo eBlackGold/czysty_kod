@@ -44,6 +44,11 @@ public class Register extends AppCompatActivity {
                         // Zapis użytkownika do bazy, przejście do aktywności konto
                         AddCustomerModel customer = new AddCustomerModel(email.getText().toString(), password.getText().toString());
                         Call<AddCustomerModel> call = apiInterface.registerCustomer(customer);
+
+                        if(seller.isChecked()) {
+                            call = apiInterface.registerSupplier(customer);
+                        }
+
                         call.enqueue(new Callback<AddCustomerModel>() {
                             @Override
                             public void onResponse(Call<AddCustomerModel> call, Response<AddCustomerModel> response) {

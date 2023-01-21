@@ -75,13 +75,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/seller_data">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
     </ScrollView>
 
     <LinearLayout
@@ -97,26 +90,21 @@
             android:background="@drawable/rounded_corners"
             android:layout_gravity="center"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/historia_transakcji"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:layout_margin="10dp"/>
+        <ListView
+                android:id="@+id/offer_history"
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-        <ScrollView
-            android:id="@+id/offer_history"
-            android:layout_width="300dp"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-            </LinearLayout>
-        </ScrollView>
+            </ListView>
 
     </LinearLayout>
 
