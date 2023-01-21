@@ -61,5 +61,7 @@
     <string name="ilosc_sztuk">Ilość sztuk:</string>
     <string name="profil_użytkownika_nav">Profil użytkownika</string>
     <string name="profil_sprzedawcy_nav">Profil sprzedawcy</string>
+    <string name="byuer">nabywca</string>
+    <string name="seller">sprzedawca</string>
 
 </resources>

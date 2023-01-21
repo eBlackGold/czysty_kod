@@ -101,6 +101,28 @@
             android:hint="@string/powtorz_haslo2"
             android:autofillHints=""/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <RadioButton
+                android:id="@+id/buyer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/byuer" />
+
+            <RadioButton
+                android:id="@+id/seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/seller" />
+
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/register"

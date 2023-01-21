@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class Register extends AppCompatActivity {
         EditText passwordR = findViewById(R.id.password_repeated);
         Button register = findViewById(R.id.register);
         TextView login = findViewById(R.id.login_page);
+        RadioButton buyer = findViewById(R.id.buyer);
+        RadioButton seller = findViewById(R.id.seller);
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +70,14 @@ public class Register extends AppCompatActivity {
                 else {
                     Toast.makeText(getBaseContext(),"Nieprawidłowy adres e-mail", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }
