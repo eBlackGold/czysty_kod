@@ -105,6 +105,17 @@ public class Cart extends AppCompatActivity {
 
             }
         });
+
+        Button buttonBack = findViewById(R.id.buttonBack);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentBack = new Intent(getBaseContext(), Offers.class);
+                startActivity(intentBack);
+
+            }
+        });
     }
 
     @Override
