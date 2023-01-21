@@ -4,6 +4,7 @@ import com.example.eblackgold.AddCustomerModel;
 import com.example.eblackgold.AddProductModel;
 import com.example.eblackgold.LoginAuthorizationModel;
 import com.example.eblackgold.ProductResponse;
+import com.example.eblackgold.SubmitOrderModel;
 
 import java.util.List;
 
@@ -22,6 +23,9 @@ public interface APIInterface {
 
     @POST("/api/Authorization/login/")
     Call<Void> authorizeLogin(@Body LoginAuthorizationModel auth);
+
+    @POST("/api/Order/submit-order")
+    Call<Void> submitOrder(@Body SubmitOrderModel order);
 
     @GET("/api/Product/get-all-products/")
     Call<List<ProductResponse>> getAllProducts();
