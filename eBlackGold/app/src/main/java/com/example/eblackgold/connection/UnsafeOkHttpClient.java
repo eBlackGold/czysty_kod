@@ -1,4 +1,4 @@
-package com.example.eblackgold;
+package com.example.eblackgold.connection;
 
 import java.security.cert.CertificateException;
 

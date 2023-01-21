@@ -1,6 +1,7 @@
 package com.example.eblackgold;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class OffersListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        Log.d("VIEW", productNamesList[position]);
         convertView = inflater.inflate(R.layout.data_row_offers, null);
         TextView productName = (TextView) convertView.findViewById(R.id.productNameDataRowOffers);
         TextView units = (TextView) convertView.findViewById(R.id.unitsDataRowOffers);

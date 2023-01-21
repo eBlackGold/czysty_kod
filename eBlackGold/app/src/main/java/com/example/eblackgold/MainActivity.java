@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.eblackgold.connection.APIClient;
+import com.example.eblackgold.connection.APIInterface;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        String emailValidation = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+        String emailValidation = "([a-zA-z0-9._-]+@)([a-z]+)(\\.+[a-z]+)";
         EditText email = findViewById(R.id.email_login);
         EditText password = findViewById(R.id.password_login);
         TextView restorePassword = findViewById(R.id.restore);
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if ((email.getText().toString().matches(emailValidation) && !email.getText().toString().isEmpty())) {
+
                     LoginAuthorizationModel customer = new LoginAuthorizationModel(email.getText().toString(), password.getText().toString(), "Customer");
                     Call<Void> call = apiInterface.authorizeLogin(customer);
                     call.enqueue(new Callback<Void>() {

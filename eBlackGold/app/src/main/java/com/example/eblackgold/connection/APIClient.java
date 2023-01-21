@@ -1,4 +1,4 @@
-package com.example.eblackgold;
+package com.example.eblackgold.connection;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

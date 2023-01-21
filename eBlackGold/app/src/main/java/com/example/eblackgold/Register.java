@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eblackgold.connection.APIClient;
+import com.example.eblackgold.connection.APIInterface;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

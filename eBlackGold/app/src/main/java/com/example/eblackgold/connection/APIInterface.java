@@ -1,4 +1,9 @@
-package com.example.eblackgold;
+package com.example.eblackgold.connection;
+
+import com.example.eblackgold.AddCustomerModel;
+import com.example.eblackgold.AddProductModel;
+import com.example.eblackgold.LoginAuthorizationModel;
+import com.example.eblackgold.ProductResponse;
 
 import java.util.List;
 
@@ -19,5 +24,5 @@ public interface APIInterface {
     Call<Void> authorizeLogin(@Body LoginAuthorizationModel auth);
 
     @GET("/api/Product/get-all-products/")
-    Call<List<AddProductModel>> getAllProducts();
+    Call<List<ProductResponse>> getAllProducts();
 }
