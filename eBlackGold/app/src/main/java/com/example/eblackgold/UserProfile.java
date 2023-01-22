@@ -3,7 +3,10 @@ package com.example.eblackgold;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListPopupWindow;
 import android.widget.ListView;
@@ -39,6 +42,16 @@ public class UserProfile extends AppCompatActivity {
         List<String> prices = new ArrayList<String>();
         List<String> prodTypes = new ArrayList<String>();
         List<Integer> images = new ArrayList<Integer>();
+
+        Button buttonBack = findViewById(R.id.buttonBackUser);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentOffers = new Intent(getBaseContext(), Offers.class);
+                startActivity(intentOffers);
+            }
+        });
+
 
         Call<List<ProductResponse>> call = apiInterface.getAllProductsByCustomer(TemporaryData.username);
         call.enqueue(new Callback<List<ProductResponse>>() {

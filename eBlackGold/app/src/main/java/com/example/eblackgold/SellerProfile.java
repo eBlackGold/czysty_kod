@@ -2,7 +2,10 @@ package com.example.eblackgold;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.eblackgold.connection.APIClient;
@@ -33,6 +36,15 @@ public class SellerProfile extends AppCompatActivity {
         List<Integer> images = new ArrayList<Integer>();
 
         Call<List<ProductResponse>> call = apiInterface.getAllProductsFromSupplier(TemporaryData.username);
+
+        Button buttonBack = findViewById(R.id.buttonBackSeller);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentOffers = new Intent(getBaseContext(), Offers.class);
+                startActivity(intentOffers);
+            }
+        });
 
         List<String> finalNames1 = names;
         List<String> finalQuantity1 = quantity;

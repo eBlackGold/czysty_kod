@@ -8,11 +8,15 @@
     android:background="@color/black">
 
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        app:tint="@android:color/white" />
+    <Button
+        android:id="@+id/buttonBackUser"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="back button"
+        android:drawableBottom="@drawable/ic_back_white"
+        />
 
     <TextView
         android:id="@+id/user_profile"
