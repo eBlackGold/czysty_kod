@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name"><font color='#FFFFFF'>eBlack</font><font color='#FFA829'>Gold</font></string>
+    <string name="eblackgold">eBlack<font color='#FFA829'>Gold</font></string>
+    <string name="eblackgold_bar"><font color='#FFFFFF'>eBlack</font><font color='#FFA829'>Gold</font></string>
+    <string name="logowanie">Logowanie</string>
+    <string name="adres_email">Adres e-mail</string>
+    <string name="haslo">Hasło</string>
+    <string name="zapomniales_hasla">Zapomniałeś/aś hasła?</string>
+    <string name="wpisz_haslo">wpisz hasło</string>
+    <string name="wpisz_adres_email">wpisz adres e-mail</string>
+    <string name="zaloguj">Zaloguj</string>
+    <string name="nie_masz_konta">Nie masz konta? <font color='#FFA829'><b>Zarejestruj się!</b></font></string>
+    <string name="white_background_block">White background block</string>
+    <string name="a_picture_of_a_piece_of_coal">A picture of a piece of coal</string>
+    <string name="rejestracja">Rejestracja</string>
+    <string name="powtorz_haslo">Powtórz hasło</string>
+    <string name="powtorz_haslo2">powtórz hasło</string>
+    <string name="zarejestruj">Zarejestruj</string>
+    <string name="masz_konto">Masz już konto? <font color='#FFA829'><b>Zaloguj się!</b></font></string>
+    <string name="profil_użytkownika">Profil <font color='#FFA829'>użytkownika</font></string>
+    <string name="profil_sprzedawcy">Profil <font color='#FFA829'>sprzedawcy</font></string>
+    <string name="imie">Imię</string>
+    <string name="nazwisko">Nazwisko</string>
+    <string name="adres">Adres</string>
+    <string name="historia_transakcji">Historia Transakcji</string>
+    <string name="nazwa_firmy">Nazwa firmy</string>
+    <string name="aktywne_oferty">Aktywne oferty</string>
+    <string name="nav_profil">Profil</string>
+    <string name="koszyk">Koszyk</string>
+    <string name="koszyk_tytul">W Twoim koszyku</string>
+    <string name="ustawienia">Ustawienia</string>
+    <string name="regulamin">Regulamin</string>
+    <string name="wyloguj_się"><font color='#D82828'>Wyloguj się</font></string>
+    <string name="title_activity_cart">Cart</string>
+    <string name="nazwa_produktu">Nazwa produktu</string>
+    <string name="nazwa_sprzedawcy">Nazwa sprzedawcy</string>
+    <string name="ilosc">Ilość dostępnych sztuk: </string>
+    <string name="cena_sztuka">Cena za sztukę: </string>
+    <string name="wegiel_typ">Typ węgla: </string>
+    <string name="typ1">31.2</string>
+    <string name="typ2">32.1</string>
+    <string name="typ3">33</string>
+    <string name="odbior_osobisty">Odbiór osobisty</string>
+    <string name="kurier">Kurier</string>
+    <string name="blik">Blik</string>
+    <string name="przelew_bankowy">Przelew bankowy</string>
+    <string name="za_pobraniem">Za pobraniem</string>
+    <string name="mozliwe_dostawy">Możliwe opcje dostawy</string>
+    <string name="mozliwe_zaplaty">Możliwe opcje zapłaty</string>
+    <string name="opcje_dostawy">Opcje dostawy</string>
+    <string name="opcje_zaplaty">Opcje zapłaty</string>
+    <string name="dodaj_do_koszyka">Dodaj do koszyka</string>
+    <string name="dodaj_oferte">Dodaj ofertę</string>
+    <string name="cena_od">Cena od: </string>
+    <string name="cena_do">do: </string>
+    <string name="szukaj">Szukaj produktu</string>
+    <string name="sortuj">Sortuj:</string>
+    <string name="wyszukane">Wyszukane</string>
+    <string name="w_koszyku">W Twoim koszyku</string>
+    <string name="zaplac">Zapłać</string>
+    <string name="ilosc_sztuk">Ilość sztuk:</string>
+    <string name="profil_użytkownika_nav">Profil użytkownika</string>
+    <string name="profil_sprzedawcy_nav">Profil sprzedawcy</string>
+    <string name="byuer">nabywca</string>
+    <string name="seller">sprzedawca</string>
+
+</resources>

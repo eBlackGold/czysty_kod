@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddToCart">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgAddToCart"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_box" />
+
+            <TextView
+                android:id="@+id/productNameAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:ems="10"
+                android:hint="@string/nazwa_produktu"
+                android:minHeight="48dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/imgAddToCart"
+                app:layout_constraintTop_toTopOf="@+id/imgAddToCart" />
+
+            <TextView
+                android:id="@+id/sellerNameAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/nazwa_sprzedawcy"
+                android:minHeight="48dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/productNameAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/productNameAddToCart" />
+
+            <TextView
+                android:id="@+id/unitsTextAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/ilosc"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/imgAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/imgAddToCart" />
+
+            <TextView
+                android:id="@+id/priceTextAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/cena_sztuka"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/unitsTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/unitsTextAddToCart" />
+
+            <TextView
+                android:id="@+id/unitsInStockAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ems="10"
+                android:text="10"
+                app:layout_constraintStart_toEndOf="@+id/unitsTextAddToCart"
+                app:layout_constraintTop_toTopOf="@+id/unitsTextAddToCart" />
+
+            <TextView
+                android:id="@+id/priceAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:text="99,44"
+                app:layout_constraintStart_toEndOf="@+id/priceTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/unitsTextAddToCart" />
+
+
+            <TextView
+                android:id="@+id/typeTextAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/wegiel_typ"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/priceTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/priceTextAddToCart" />
+
+            <TextView
+                android:id="@+id/typeAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/typ1"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/typeTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/priceTextAddToCart" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeAddToCart" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupDeliveryAddToCart" />
+
+            <TextView
+                android:id="@+id/title1AddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/opcje_dostawy"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/typeTextAddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/title2AddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/opcje_zaplaty"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/title1AddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+            <Button
+                android:id="@+id/buttonAddToCart"
+                style="@style/button_grey"
+                android:layout_marginTop="20dp"
+                android:text="@string/dodaj_do_koszyka"
+                app:backgroundTint="@color/gold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.465"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupPaymentAddToCart" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupDeliveryAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/title1AddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/title1AddToCart">
+
+                <RadioButton
+                    android:id="@+id/radioButtonPersonalPickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/odbior_osobisty" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCourier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kurier" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroupPaymentAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/title2AddToCart"
+                app:layout_constraintTop_toBottomOf="@+id/title2AddToCart">
+
+                <RadioButton
+                    android:id="@+id/radioButtonBlik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blik" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTransfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/przelew_bankowy" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCash"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:minHeight="48dp"
+                    android:text="@string/za_pobraniem" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
